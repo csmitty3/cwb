@@ -68,7 +68,6 @@ nav h3:hover {
 
 img {
     max-width: 100%;
-    border: 1px solid black;
 }
 
 #image1 {
@@ -103,12 +102,53 @@ img {
     visibility: hidden;
 }
 #development:hover > .shade, #aau:hover > .shade, #camp:hover > .shade {
-    visibility: visible;
     animation-name: shading;
-    animation-duration: 1.5s;
+    animation-duration: 0.8s;
     animation-fill-mode: forwards;
 }
 @keyframes shading {
-    from { background: rgb(34, 139, 34, 0.0); height: 0%;}
-    to { background: rgb(34, 139, 34, 0.8); height: 100%;}
+    from { background: rgb(34, 139, 34, 0.0); height: 0%; visibility: hidden;}
+    to { background: rgb(34, 139, 34, 0.8); height: 100%; visibility: visible;}
+}
+.info {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    color: white;
+    text-align: center;
+    line-height: 23px;
+    visibility: hidden;
+}
+#development:hover > .info, #aau:hover > .info, #camp:hover > .info {
+    animation-name: info;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+@keyframes info {
+    from {height: 0%; visibility: hidden; opacity: 0.0;}
+    to {height: 100%; visibility: visible; opacity: 1.0;}
+}
+.title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    color: white;
+    visibility: visible;
+    text-align: center;
+    text-decoration: underline;
+}
+#sidebar {
+    grid-area: 2 / 1 / span 3 / span 1;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    justify-content: space-evenly;
+}
+#sidebar img{
+    width: 25px;
+    height: 25px;
 }
