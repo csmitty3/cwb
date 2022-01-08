@@ -98,12 +98,17 @@ img {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: rgb(34, 139, 34, 0.5);
+    height: 0%;
+    background: rgb(34, 139, 34, 0.0);
+    visibility: hidden;
 }
-#aau .shade {
-    grid-area: 14 / 5 / span 3 / span 7;
+#development:hover > .shade, #aau:hover > .shade, #camp:hover > .shade {
+    visibility: visible;
+    animation-name: shading;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
 }
-#camp .shade {
-    grid-area: 10 / 9 / span 3 / span 6;
+@keyframes shading {
+    from { background: rgb(34, 139, 34, 0.0); height: 0%;}
+    to { background: rgb(34, 139, 34, 0.8); height: 100%;}
 }
