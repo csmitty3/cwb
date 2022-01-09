@@ -275,6 +275,13 @@ footer {
      grid-area: 24 / 2 / span 1 / span 13;
      background-image: linear-gradient(rgb(7, 58, 29), white);
  }
+
+ footer a {
+     color: white;
+ }
+ footer a:hover {
+     text-decoration: underline;
+ }
  @media only screen and (max-width: 1185px) {
      #mission p {
          line-height: 15px;
