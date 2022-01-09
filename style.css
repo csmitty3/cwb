@@ -1,10 +1,12 @@
+body {
+    font-family: 'Azeret Mono', monospace;
+}
 #grid {
     display: grid;
     grid-template: repeat(30, 1fr) / 85px repeat(13, 1fr) 85px;
     width: 100%;
     height: 3000px;
     margin: 0;
-    gap: 1px;
     top: 100px;
 }
 body {
@@ -36,29 +38,30 @@ header {
 nav h3 {
     padding-right: 10px;
     text-align: center;
+    font-weight: 900;
 }
 
 nav h3:hover {
-    color: forestgreen;
+    color: rgb(7, 58, 29);
 }
 #quote {
-    grid-area: 2 / 2 / span 2 / span 13;
+    grid-area: 2 / 2 / span 3 / span 13;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: forestgreen;
+    background-color: rgb(7, 58, 29);
 }
 #quote h1 {
     text-align: center;
-    line-height: 60px;
+    line-height: 50px;
 }
 #mission {
-    grid-area: 5 / 2 / span 4 / span 6;
-    border: 3px solid black;
+    grid-area: 6 / 2 / span 4 / span 6;
+    position: relative;
 }
 #mission p {
     height: 100%;
-    line-height: 30px;
+    line-height: 25px;
     font-size: larger;
     text-align: center;
 }
@@ -71,25 +74,25 @@ img {
 }
 
 #image1 {
-    grid-area: 5 / 9 / span 4 / span 6;
-    border: 3px solid black;
-    text-align: center;
+    grid-area: 6 / 9 / span 4 / span 6;
+    display: flex;
     overflow: hidden;
+    align-items: center;
 }
 
 #development {
     position: relative;
-    grid-area: 10 / 2 / span 3 / span 6;
+    grid-area: 12 / 2 / span 3 / span 6;
     overflow: hidden;
 }
 #aau {
     position: relative;
-    grid-area: 14 / 5 / span 3 / span 7;
+    grid-area: 16 / 5 / span 3 / span 7;
     overflow: hidden;
 }
 #camp {
     position: relative;
-    grid-area: 10 / 9 / span 3 / span 6;
+    grid-area: 12 / 9 / span 3 / span 6;
     overflow: hidden;
 }
 .shade {
@@ -98,7 +101,7 @@ img {
     left: 0;
     width: 100%;
     height: 0%;
-    background: rgb(34, 139, 34, 0.0);
+    background: rgb(7, 58, 29, 0.0);
     visibility: hidden;
 }
 #development:hover > .shade, #aau:hover > .shade, #camp:hover > .shade {
@@ -107,19 +110,20 @@ img {
     animation-fill-mode: forwards;
 }
 @keyframes shading {
-    from { background: rgb(34, 139, 34, 0.0); height: 0%; visibility: hidden;}
-    to { background: rgb(34, 139, 34, 0.8); height: 100%; visibility: visible;}
+    from { background: rgb(7, 58, 29, 0.0); height: 0%; visibility: hidden;}
+    to { background: rgb(7, 58, 29, 0.8); height: 100%; visibility: visible;}
 }
 .info {
     position: absolute;
-    top: 30px;
+    top: 40px;
     left: 0;
     width: 100%;
     height: 0%;
     color: white;
     text-align: center;
-    line-height: 23px;
+    line-height: 18px;
     visibility: hidden;
+    font-size: 12px;
 }
 #development:hover > .info, #aau:hover > .info, #camp:hover > .info {
     animation-name: info;
@@ -141,14 +145,121 @@ img {
     text-align: center;
     text-decoration: underline;
 }
-#sidebar {
-    grid-area: 2 / 1 / span 3 / span 1;
-    display: flex;
-    align-items: center;
-    flex-flow: column;
-    justify-content: space-evenly;
+#left_sidebar {
+   position: fixed;
+   top: 100px;
+   left: 0px;
+   height: 50%;
+   width: 80px;
+   display: flex;
+   align-items: center;
+   flex-flow: column;
+   justify-content: space-evenly;
 }
-#sidebar img{
+#left_sidebar img{
     width: 25px;
     height: 25px;
 }
+#bio_pic {
+    grid-area: 21 / 2 / span 3 / span 4;
+    background-color: rgb(7, 58, 29);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#bio_pic img {
+    border-radius: 10%;
+    border: medium solid black;
+}
+#about {
+    grid-area: 21 / 6 / span 3 / span 9;
+    text-align: center;
+    line-height: 20px;
+    background-color: rgb(7, 58, 29);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    overflow: hidden;
+    position: relative;
+    color: white;
+}
+#about h2 {
+    margin: 0;
+}
+#about p {
+    padding: 0px 10px 0px 10px;
+}
+#testimonial_pics {
+    grid-area: 26 / 2 / span 3 / span 4;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#testimonial_pics img {
+    width: 100%;
+
+}
+#testimonial {
+    grid-area: 26 / 6 / span 3 / span 9;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    line-height: 15px;
+    position: relative;
+}
+#mission_span {
+    position: absolute;
+    visibility: hidden;
+    top: -150px;
+}
+#events_span {
+    position: absolute;
+    visibility: hidden;
+    top: -150px;
+}
+#about_span {
+    position: absolute;
+    visibility: hidden;
+    top: -150px;
+}
+#testimonial_span {
+    position: absolute;
+    visibility: hidden;
+    top: -150px;
+}
+a {
+    color: black;
+}
+footer {
+    grid-area: 30 / 1 / span 1 / span 15;
+    background-color: rgb(7, 58, 29);
+    display: flex;
+    align-items: center;
+    color: white;
+    border-top: 3px solid black;
+    justify-content: space-evenly;
+}
+#right_sidebar {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    top: 305px;
+    right: 0px;
+    height: 100%;
+    width: 80px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+ }
+ #gradient_one {
+     grid-area: 20 / 2 / span 1 / span 13;
+     background-image: linear-gradient(white, rgb(7, 58, 29));
+ }
+ #gradient_two {
+     grid-area: 24 / 2 / span 1 / span 13;
+     background-image: linear-gradient(rgb(7, 58, 29), white);
+ }
