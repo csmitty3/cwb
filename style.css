@@ -5,7 +5,7 @@ body {
     display: grid;
     grid-template: repeat(30, 1fr) / 85px repeat(13, 1fr) 85px;
     width: 100%;
-    height: 3000px;
+    height: 3350px;
     margin: 0;
     top: 100px;
 }
@@ -36,13 +36,14 @@ header {
     opacity: 0.9;
 }
 nav h3 {
-    padding-right: 10px;
+    padding-right: 15px;
     text-align: center;
     font-weight: 900;
 }
 
 nav h3:hover {
-    color: rgb(7, 58, 29);
+        color: black;
+        text-decoration: underline;
 }
 #quote {
     grid-area: 2 / 2 / span 3 / span 13;
@@ -58,15 +59,19 @@ nav h3:hover {
 #mission {
     grid-area: 6 / 2 / span 4 / span 6;
     position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 #mission p {
-    height: 100%;
-    line-height: 25px;
+    line-height: 20px;
     font-size: larger;
     text-align: center;
 }
 #mission h2 {
     text-align: center;
+    margin-bottom: 0;
+    margin-top: 0;
 }
 
 img {
@@ -121,7 +126,7 @@ img {
     height: 0%;
     color: white;
     text-align: center;
-    line-height: 18px;
+    line-height: 20px;
     visibility: hidden;
     font-size: 12px;
 }
@@ -190,6 +195,7 @@ img {
 }
 #about p {
     padding: 0px 10px 0px 10px;
+    margin-top: 5px;
 }
 #testimonial_pics {
     grid-area: 26 / 2 / span 3 / span 4;
@@ -208,9 +214,14 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 50px;
+    padding: 20px;
     line-height: 15px;
     position: relative;
+}
+#saying {
+    line-height: 25px;
+    justify-self: left;
+    padding-right: 20px;
 }
 #mission_span {
     position: absolute;
@@ -233,7 +244,8 @@ img {
     top: -150px;
 }
 a {
-    color: black;
+    color: rgb(7, 58, 29);
+    text-decoration: none;
 }
 footer {
     grid-area: 30 / 1 / span 1 / span 15;
@@ -262,4 +274,19 @@ footer {
  #gradient_two {
      grid-area: 24 / 2 / span 1 / span 13;
      background-image: linear-gradient(rgb(7, 58, 29), white);
+ }
+ @media only screen and (max-width: 1185px) {
+     #mission p {
+         line-height: 15px;
+         font-size: 12px;
+         margin: 0px;
+     }
+     #testimonial {
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+    }
+    #testimonial h3 {
+        margin: 0px;
+    }
  }
